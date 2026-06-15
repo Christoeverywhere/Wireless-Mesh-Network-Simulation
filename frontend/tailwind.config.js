@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         cyber: {
-          blue: '#00f0ff',     # Cyber blue / Cyan highlight
-          deep: '#0066ff',     # Corporate Deep Blue
-          dark: '#050b14',     # Darkest navy background
-          bg: '#0a0f1d',       # Primary dark navy background
-          card: '#0f172a',     # Cards deep navy
-          border: '#1e293b',   # Slate border
-          text: '#f8fafc'      # Slate-50 off-white
+          blue: '#00f0ff',     // Cyber blue / Cyan highlight
+          deep: '#0066ff',     // Corporate Deep Blue
+          dark: '#050b14',     // Darkest navy background
+          bg: '#0a0f1d',       // Primary dark navy background
+          card: '#0f172a',     // Cards deep navy
+          border: '#1e293b',   // Slate border
+          text: '#f8fafc'      // Slate-50 off-white
         },
         security: {
-          success: '#10b981',  # Emerald success green
-          warning: '#f97316',  # Alert warning orange
-          threat: '#ef4444',   # Fire threat red
-          unknown: '#64748b'   # Gray indicator
+          success: '#10b981',  // Emerald success green
+          warning: '#f97316',  // Alert warning orange
+          threat: '#ef4444',   // Fire threat red
+          unknown: '#64748b'   // Gray indicator
         }
       },
       boxShadow: {
