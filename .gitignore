@@ -1,0 +1,115 @@
+# ==========================================
+# Python / FastAPI Backend
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Uvicorn / FastAPI logs
+*.log
+
+# pyserial / runtime artifacts
+*.pid
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ==========================================
+# Node.js / React / Vite Frontend
+# ==========================================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Vite cache
+.vite/
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Package manager locks (keep package-lock.json or yarn.lock, not both)
+yarn.lock
+pnpm-lock.yaml
+
+# ==========================================
+# Environment & Secrets
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# ==========================================
+# OS / Editor
+# ==========================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# ==========================================
+# Arduino / ESP8266
+# ==========================================
+*.elf
+*.bin
+*.hex
+*.map
+# Arduino build cache
+build/
+
+# ==========================================
+# Misc
+# ==========================================
+*.bak
+*.swp
+*.tmp
+*.orig
