@@ -18,7 +18,11 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
   const [udpPort, setUdpPort] = useState('4210');
   const [blacklistThreshold, setBlacklistThreshold] = useState('2');
   const [baudRate, setBaudRate] = useState('115200');
-  const [wsUrl, setWsUrl] = useState('ws://localhost:8000/ws');
+  const isProd = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+  const defaultWsUrl = isProd
+    ? `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/_/backend/ws`
+    : `ws://${window.location.hostname}:8000/ws`;
+  const [wsUrl, setWsUrl] = useState(defaultWsUrl);
   
   const [isSaved, setIsSaved] = useState(false);
   const [isBusyReset, setIsBusyReset] = useState(false);

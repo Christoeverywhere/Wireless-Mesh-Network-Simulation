@@ -81,7 +81,10 @@ const App: React.FC = () => {
         config.body = JSON.stringify(body);
       }
       
-      const res = await fetch(endpoint, config);
+      const isProd = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+      const targetEndpoint = isProd && endpoint.startsWith('/') ? `/_/backend${endpoint}` : endpoint;
+      
+      const res = await fetch(targetEndpoint, config);
       if (!res.ok) {
         throw new Error(`API error: ${res.statusText}`);
       }
@@ -267,7 +270,12 @@ const App: React.FC = () => {
       if (wsRef.current) return;
       
       setWsConnecting(true);
-      const url = `ws://${window.location.hostname}:8000/ws`;
+      const isProd = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const url = isProd
+        ? `${protocol}//${window.location.host}/_/backend/ws`
+        : `ws://${window.location.hostname}:8000/ws`;
+        
       loggerInfo("Initiating WebSocket link: " + url);
       
       const ws = new WebSocket(url);
