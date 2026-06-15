@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply bg-cyber-dark text-slate-200 antialiased selection:bg-cyber-blue/30 selection:text-cyber-blue;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* Custom enterprise dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-cyber-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full border border-transparent hover:bg-slate-700;
+  }
+}
+
+@layer utilities {
+  .font-mono-code {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+  }
+
+  /* Cyber/Neon Glass Effect */
+  .cyber-panel {
+    @apply bg-[#0c1322] border border-slate-800 rounded-lg shadow-lg relative overflow-hidden;
+  }
+
+  .cyber-panel-header {
+    @apply px-4 py-2 bg-[#0e1628]/80 border-b border-slate-800/80 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400;
+  }
+
+  .cyber-glow-text {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+
+  .cyber-glow-text-red {
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+  }
+
+  .cyber-glow-text-green {
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  }
+
+  .led-glow-green {
+    box-shadow: 0 0 12px #10b981, inset 0 0 4px #10b981;
+  }
+
+  .led-glow-red {
+    box-shadow: 0 0 12px #ef4444, inset 0 0 4px #ef4444;
+  }
+
+  .led-glow-yellow {
+    box-shadow: 0 0 12px #f59e0b, inset 0 0 4px #f59e0b;
+  }
+
+  .led-glow-gray {
+    box-shadow: 0 0 6px #64748b;
+  }
+
+  /* Subtle cyber background grid */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(to right, rgba(0, 85, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 85, 255, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Keyframe animations for packets moving along routes */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-dash-fast {
+  stroke-dasharray: 8, 4;
+  animation: dash 0.8s linear infinite;
+}
+
+.animate-dash-medium {
+  stroke-dasharray: 8, 4;
+  animation: dash 1.5s linear infinite;
+}
+
+.animate-dash-slow {
+  stroke-dasharray: 8, 4;
+  animation: dash 3s linear infinite;
+}
+
+/* Pulse keyframes for node points */
+@keyframes ring-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.node-pulse-ring {
+  animation: ring-pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
